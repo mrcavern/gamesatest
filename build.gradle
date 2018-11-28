@@ -6,7 +6,6 @@
  */
  plugins {
      id "com.linkedin.python-sdist" version "0.3.9"
-     classpath 'com.linkedin.pygradle:pygradle-plugin:0.7.1-SNAPSHOT'
  }
 
  dependencies {
