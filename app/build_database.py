@@ -4,9 +4,9 @@ from models import Person
 
 # Data to initialize database with
 PEOPLE = [
-    {"fname": "Doug", "lname": "Farrell"},
-    {"fname": "Kent", "lname": "Brockman"},
-    {"fname": "Bunny", "lname": "Easter"},
+    {"fname": "David", "lname": "Cuevas"},
+    {"fname": "Demo", "lname": "User"},
+    {"fname": "Last", "lname": "User"},
 ]
 
 # Delete database file if it exists currently
