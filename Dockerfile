@@ -17,4 +17,4 @@ EXPOSE 5000
 ENV NAME Development
 
 # Run app.py when the container launches
-CMD ["python", "server.py"]
+CMD ["python", "app/server.py"]
