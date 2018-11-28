@@ -6,7 +6,7 @@
  */
  plugins {
      id 'com.linkedin.python', version <latest version>
-     id "com.linkedin.python-sdist" version "0.3.9"
+     id 'com.linkedin.python-sdist', version <0.3.9>
      id 'com.linkedin.python-web-app', version <latest version>
  }
 
