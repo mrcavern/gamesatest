@@ -5,8 +5,8 @@
  * Learn how to create Gradle builds at https://guides.gradle.org/creating-new-gradle-builds/
  */
  plugins {
+     id 'com.linkedin.python', version <latest version>
      id "com.linkedin.python-sdist" version "0.3.9"
-     id 'com.linkedin.python-flyer', version <latest version>
      id 'com.linkedin.python-web-app', version <latest version>
  }
 
@@ -19,8 +19,9 @@
  }
 
 apply plugin: "com.linkedin.python-sdist"
+apply plugin: "com.linkedin.python"
+apply plugin: "com.linkedin.python-web-app"
 
  repositories {
-     // This repository is provided for example purposes only
-     pyGradlePyPi()
+
  }
