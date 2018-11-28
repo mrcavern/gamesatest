@@ -12,7 +12,7 @@ pipeline {
             }
             steps {
                 script {
-                    app = docker.build("app/gamesademo")
+                    app = docker.build("dcuevas86/gamesademo")
                     app.inside {
                         sh 'echo $(curl localhost:8080)'
                     }
