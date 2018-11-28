@@ -13,9 +13,6 @@
      python 'pypi:requests:2.9.1'
      test 'pypi:mock:1.3.0'
      flask 'pypi:flask:1.0.2'
-     flask-marshmallow 'pypi:flask-marshmallow:0.9.0'
-     flask-sqlalchemy 'pypi:flask-sqlalchemy:2.1'
-     marshmallow-sqlalchemy 'pypi:marshmallow-sqlalchemy:0.15.0'
      marshmallow 'pypi:marshmallow:2.16.3'
      connexion 'pypi:connexion[swagger-ui]:2.0.2'
  }
