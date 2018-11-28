@@ -4,7 +4,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Running build automation'
-                archiveArtifacts artifacts: 'app/*'
             }
         }
         stage('Build Docker Image') {
