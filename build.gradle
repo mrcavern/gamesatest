@@ -10,10 +10,8 @@
 
  dependencies {
      python 'pypi:requests:2.9.1'
-     test 'pypi:mock:1.3.0'
  }
 
  repositories {
-     // This repository is provided for example purposes only
-     pyGradlePyPi()
+
  }
