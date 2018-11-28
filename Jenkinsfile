@@ -39,16 +39,16 @@ pipeline {
             steps {
                 input 'Deploy to Production?'
                 milestone(1)
-                withCredentials([usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]) {
+                withCredentials([usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'USERNAME', passwordVariable: 'SSHPASS')]) {
                     script {
-                        sh "sshpass -p '$USERPASS' -v ssh -o StrictHostKeyChecking=no -p2299 $USERNAME@$prod_ip \"docker pull dcuevas86/gamesademo:${env.BUILD_NUMBER}\""
+                        sh "sshpass -p '$SSHPASS' -v ssh -o StrictHostKeyChecking=no -p2299 $USERNAME@$prod_ip \"docker pull dcuevas86/gamesademo:${env.BUILD_NUMBER}\""
                         try {
-                            sh "sshpass -p '$USERPASS' -v ssh -o StrictHostKeyChecking=no -p2299 $USERNAME@$prod_ip \"docker stop gamesademo\""
-                            sh "sshpass -p '$USERPASS' -v ssh -o StrictHostKeyChecking=no -p2299 $USERNAME@$prod_ip \"docker rm gamesademo\""
+                            sh "sshpass -p '$SSHPASS' -v ssh -o StrictHostKeyChecking=no -p2299 $USERNAME@$prod_ip \"docker stop gamesademo\""
+                            sh "sshpass -p '$SSHPASS' -v ssh -o StrictHostKeyChecking=no -p2299 $USERNAME@$prod_ip \"docker rm gamesademo\""
                         } catch (err) {
                             echo: 'caught error: $err'
                         }
-                        sh "sshpass -p '$USERPASS' -v ssh -o StrictHostKeyChecking=no -p2299 $USERNAME@$prod_ip \"docker run --restart always --name train-schedule -p 8080:8080 -d dcuevas86/gamesademo:${env.BUILD_NUMBER}\""
+                        sh "sshpass -p '$SSHPASS' -v ssh -o StrictHostKeyChecking=no -p2299 $USERNAME@$prod_ip \"docker run --restart always --name train-schedule -p 8080:8080 -d dcuevas86/gamesademo:${env.BUILD_NUMBER}\""
                     }
                 }
             }
