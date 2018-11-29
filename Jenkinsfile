@@ -41,7 +41,7 @@ pipeline {
                 milestone(1)
                 withCredentials([usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'USERNAME', passwordVariable: 'SSHPASS')]) {
                     script {
-                        sh "sshpass -p 'Cuevas$$18' ssh -o StrictHostKeyChecking=no -p2299 $USERNAME@$prod_ip \"docker pull dcuevas86/gamesademo:${env.BUILD_NUMBER}\""
+                        sh "sshpass -p '$SSHPASS' ssh -o StrictHostKeyChecking=no -p2299 $USERNAME@$prod_ip \"docker pull dcuevas86/gamesademo:${env.BUILD_NUMBER}\""
                         try {
                             sh "sshpass -p 'Cuevas$$18' ssh -o StrictHostKeyChecking=no -p2299 $USERNAME@$prod_ip \"docker stop gamesademo\""
                             sh "sshpass -p 'Cuevas$$18' ssh -o StrictHostKeyChecking=no -p2299 $USERNAME@$prod_ip \"docker rm gamesademo\""
