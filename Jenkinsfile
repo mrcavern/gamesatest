@@ -48,7 +48,7 @@ pipeline {
                         } catch (err) {
                             echo: 'caught error: $err'
                         }
-                        sh "sshpass -p 'Cueva\$\$18' ssh -o StrictHostKeyChecking=no -p2299 $USERNAME@$prod_ip \"docker run --restart always --name train-schedule -p 5000:5000 -d dcuevas86/gamesademo:${env.BUILD_NUMBER}\""
+                        sh "sshpass -p 'Cueva\$\$18' ssh -o StrictHostKeyChecking=no -p2299 $USERNAME@$prod_ip \"docker run --restart always --name gamesademo -p 5000:5000 -d dcuevas86/gamesademo:${env.BUILD_NUMBER}\""
                     }
                 }
             }
