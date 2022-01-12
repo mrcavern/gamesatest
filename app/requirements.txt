@@ -4,4 +4,4 @@ Flask-SQLAlchemy==2.1
 marshmallow-sqlalchemy==0.15.0
 marshmallow==2.16.3
 connexion[swagger-ui]==2.0.2
-pipenv==2018.11.26 
+pipenv==2022.1.8 
